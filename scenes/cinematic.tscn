@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d03ogr48hd2fe"]
+
+[ext_resource type="Script" uid="uid://dop2chho1grin" path="res://scripts/cinematic.gd" id="1_lhrfg"]
+
+[node name="Cinematic" type="CanvasLayer"]
+script = ExtResource("1_lhrfg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1153.0
+offset_bottom = 651.0

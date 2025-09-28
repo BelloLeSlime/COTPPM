@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://cj4vxacjxhy00"]
+
+[ext_resource type="Script" uid="uid://bphpg6uhalxdr" path="res://scripts/Teleport.gd" id="1_w4hbs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ayim"]
+size = Vector2(35.1177, 157.653)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyeu7"]
+size = Vector2(192, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfydb"]
+size = Vector2(96, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he0bt"]
+size = Vector2(39, 257)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm8s4"]
+size = Vector2(146, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg2k5"]
+size = Vector2(131, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o8a4"]
+size = Vector2(193, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsplj"]
+size = Vector2(255, 43)
+
+[node name="Teleport" type="Node2D"]
+script = ExtResource("1_w4hbs")
+
+[node name="RDCto1ST" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RDCto1ST"]
+position = Vector2(1369, -108)
+scale = Vector2(5.46732, 1.11637)
+shape = SubResource("RectangleShape2D_2ayim")
+
+[node name="1STtoRDC" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1STtoRDC"]
+position = Vector2(4871, 932)
+shape = SubResource("RectangleShape2D_kyeu7")
+
+[node name="1STtoBED" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1STtoBED"]
+position = Vector2(5542, 523)
+shape = SubResource("RectangleShape2D_jfydb")
+
+[node name="BEDto1ST" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BEDto1ST"]
+position = Vector2(3836.5, -1404.5)
+shape = SubResource("RectangleShape2D_he0bt")
+
+[node name="RDCtoOUT" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RDCtoOUT"]
+position = Vector2(1401, 742.5)
+shape = SubResource("RectangleShape2D_vm8s4")
+
+[node name="OUTtoRDC" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OUTtoRDC"]
+position = Vector2(13424.5, 603)
+shape = SubResource("RectangleShape2D_hg2k5")
+
+[node name="1STtoBAT" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1STtoBAT"]
+position = Vector2(4871.5, 326.5)
+shape = SubResource("RectangleShape2D_6o8a4")
+
+[node name="BATto1ST" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BATto1ST"]
+position = Vector2(892.5, -1785.5)
+shape = SubResource("RectangleShape2D_vsplj")

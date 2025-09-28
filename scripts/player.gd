@@ -3,7 +3,7 @@ extends CharacterBody2D
 const speed = 300
 @export var map_open: bool = false
 @export var first_map_open: bool = true
- 
+
 func _ready():
 	$AnimatedSprite2D.play("down")
 
@@ -59,4 +59,12 @@ func close_map():
 	$Camera2D.zoom = Vector2(1, 1)
 	$AnimatedSprite2D.play("down")
 
-
+func _on_cinematic_outside_begin():
+	Dialog.show_dialog(8)
+	Globals.can_play = false
+	await Dialog.dialog_finished
+	Dialog.show_dialog(9)
+	await Dialog.dialog_finished
+	Dialog.show_dialog(10)
+	await Dialog.dialog_finished
+	Dialog.show_dialog(11)
