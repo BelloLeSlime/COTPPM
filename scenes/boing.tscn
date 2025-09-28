@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://0p3riehwad45"]
+
+[ext_resource type="Texture2D" uid="uid://b1fvei0kodok3" path="res://assets/textures/player.png" id="1_biqke"]
+[ext_resource type="Script" path="res://scripts/boing.gd" id="1_tnp1u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0ubm"]
+atlas = ExtResource("1_biqke")
+region = Rect2(133, 1, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmavn"]
+atlas = ExtResource("1_biqke")
+region = Rect2(166, 1, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yjft"]
+atlas = ExtResource("1_biqke")
+region = Rect2(166, 18, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25ydq"]
+atlas = ExtResource("1_biqke")
+region = Rect2(199, 18, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs1g0"]
+atlas = ExtResource("1_biqke")
+region = Rect2(199, 1, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpnxk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ubm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmavn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yjft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25ydq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs1g0")
+}],
+"loop": true,
+"name": &"open_fridge",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch4x2"]
+size = Vector2(20, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqixy"]
+size = Vector2(95, 64)
+
+[node name="Boing" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_tnp1u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gpnxk")
+animation = &"open_fridge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ch4x2")
+
+[node name="Dialog" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialog"]
+position = Vector2(-18.5, 26)
+shape = SubResource("RectangleShape2D_pqixy")
+
+[connection signal="body_entered" from="Dialog" to="." method="_on_dialog_body_entered"]
