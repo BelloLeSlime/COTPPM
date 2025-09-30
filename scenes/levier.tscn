@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://d26h4mpk02hug"]
+
+[ext_resource type="Texture2D" uid="uid://b1fvei0kodok3" path="res://assets/textures/player.png" id="1_5e2uc"]
+[ext_resource type="Script" uid="uid://d2qqpw4lcraje" path="res://scripts/levier.gd" id="1_6emcx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6emcx"]
+atlas = ExtResource("1_5e2uc")
+region = Rect2(1, 35, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqq8n"]
+atlas = ExtResource("1_5e2uc")
+region = Rect2(67, 35, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07cwn"]
+atlas = ExtResource("1_5e2uc")
+region = Rect2(166, 35, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpnp0"]
+atlas = ExtResource("1_5e2uc")
+region = Rect2(133, 35, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cceh8"]
+atlas = ExtResource("1_5e2uc")
+region = Rect2(100, 35, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwcn3"]
+atlas = ExtResource("1_5e2uc")
+region = Rect2(67, 35, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4ure"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6emcx")
+}],
+"loop": true,
+"name": &"idle up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqq8n")
+}],
+"loop": true,
+"name": &"idle up hidden",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07cwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpnp0")
+}],
+"loop": true,
+"name": &"walk down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cceh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwcn3")
+}],
+"loop": true,
+"name": &"walk up hidden",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e2uc"]
+size = Vector2(22, 16)
+
+[node name="Levier" type="StaticBody2D"]
+scale = Vector2(4, 4)
+collision_layer = 2
+script = ExtResource("1_6emcx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_b4ure")
+animation = &"walk up hidden"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5e2uc")

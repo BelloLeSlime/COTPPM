@@ -58,13 +58,3 @@ func close_map():
 	Globals.can_play = true
 	$Camera2D.zoom = Vector2(1, 1)
 	$AnimatedSprite2D.play("down")
-
-func _on_cinematic_outside_begin():
-	Dialog.show_dialog(8)
-	Globals.can_play = false
-	await Dialog.dialog_finished
-	Dialog.show_dialog(9)
-	await Dialog.dialog_finished
-	Dialog.show_dialog(10)
-	await Dialog.dialog_finished
-	Dialog.show_dialog(11)

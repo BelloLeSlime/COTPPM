@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj4vxacjxhy00"]
+[gd_scene load_steps=12 format=3 uid="uid://cj4vxacjxhy00"]
 
 [ext_resource type="Script" uid="uid://bphpg6uhalxdr" path="res://scripts/Teleport.gd" id="1_w4hbs"]
 
@@ -25,6 +25,12 @@ size = Vector2(193, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsplj"]
 size = Vector2(255, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4hbs"]
+size = Vector2(65, 260)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxlc7"]
+size = Vector2(34, 128)
 
 [node name="Teleport" type="Node2D"]
 script = ExtResource("1_w4hbs")
@@ -77,3 +83,15 @@ shape = SubResource("RectangleShape2D_6o8a4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BATto1ST"]
 position = Vector2(892.5, -1785.5)
 shape = SubResource("RectangleShape2D_vsplj")
+
+[node name="BOIto1ST" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BOIto1ST"]
+position = Vector2(2451.5, 1895)
+shape = SubResource("RectangleShape2D_w4hbs")
+
+[node name="1STtoBOI" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1STtoBOI"]
+position = Vector2(4222, 524)
+shape = SubResource("RectangleShape2D_oxlc7")
