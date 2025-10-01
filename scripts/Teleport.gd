@@ -42,13 +42,14 @@ func _on_area_body_entered(area: Area2D, body: Node, player: Node, fade: Node):
 			if name == "RDCtoOUT" and first_out == false:
 				await teleport_finished
 				
+				player.direction = "up"
 				Dialog.show_dialog(8)
-				Globals.can_play = false
 				await Dialog.dialog_finished
 				
 				Dialog.show_dialog(9)
 				await Dialog.dialog_finished
 				Globals.can_play = false
+				player.direction = "down"
 				levier.go_up_hidden(70)
 				await levier.move_finished
 				
@@ -60,6 +61,7 @@ func _on_area_body_entered(area: Area2D, body: Node, player: Node, fade: Node):
 				await Dialog.dialog_finished
 				Globals.can_play = false
 				levier.go_down_and_pop(100)
+				await levier.move_finished
 				Globals.can_play = true
 				first_out = true
 		else:

@@ -7,7 +7,9 @@ func _on_dialog_body_entered(body):
 	if body.name == "Player":
 		Dialog.show_dialog(1)
 		await Dialog.dialog_finished
+
 		Globals.can_play = false
+
 		$AnimatedSprite2D.play("open_fridge")
 		await $AnimatedSprite2D.frame_changed
 		await $AnimatedSprite2D.frame_changed

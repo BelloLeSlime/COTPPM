@@ -19,5 +19,6 @@ func go_down_and_pop(n: int = 100):
 	for i in range(n):
 		position.y += speed
 		await get_tree().process_frame
-	queue_free()
 	emit_signal("move_finished")
+	queue_free()
+

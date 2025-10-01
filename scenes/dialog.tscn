@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3uinxlnbi6gy"]
 
-[ext_resource type="Script" uid="uid://dg0yijwl4ekjk" path="res://scripts/dialog.gd" id="1_f331x"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="1_f331x"]
 [ext_resource type="StyleBox" uid="uid://ce0mdnlpqc0pp" path="res://assets/styletextures/dialog.tres" id="2_vcnrg"]
 [ext_resource type="FontFile" uid="uid://crka70831x4nh" path="res://assets/fonts/determination.ttf" id="3_att0w"]
 [ext_resource type="Texture2D" uid="uid://clj4umaingfy3" path="res://assets/characters/Bello/normal.png" id="4_yocrs"]
